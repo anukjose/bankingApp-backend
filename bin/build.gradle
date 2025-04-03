@@ -17,17 +17,17 @@ dependencies {
     // Spring Boot Starter Web for web applications
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'com.oracle.database.jdbc:ojdbc11:23.3.0.23.09'  // Oracle JDBC driver
     implementation 'com.google.code.gson:gson:2.8.6'  // Gson dependency
     
+    //jwt token
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
+   // JWT dependencies (make sure all parts are included)
     
-// JWT Dependencies (Updated for Spring Boot 3 Compatibility)
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
-    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
-
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'  // Required for JSON parsing
 
 
     

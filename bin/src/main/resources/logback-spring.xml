@@ -1,0 +1,37 @@
+<configuration>
+
+    <!-- Define Console Appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- Console log pattern -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Define File Appender -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <!-- Path to the log file -->
+        <file>logs/application.log</file>
+        <encoder>
+            <!-- File log pattern -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger (set global log level) -->
+    <root level="INFO">
+        <!-- Attach appenders to the root logger -->
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Custom loggers for specific packages or classes -->
+    <!-- Log Spring framework classes with DEBUG level -->
+    <logger name="org.springframework" level="DEBUG"/>
+    <!-- Log your service classes with DEBUG level -->
+    <logger name="com.banking.service" level="DEBUG"/>
+    <!-- Log Hibernate SQL queries -->
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+    <logger name="org.hibernate.type.descriptor.sql" level="TRACE"/>
+
+</configuration>
